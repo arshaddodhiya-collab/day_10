@@ -1,0 +1,50 @@
+<div class="qrcode-container">
+  <h1>QR Code Understanding Guide</h1>
+
+  <div class="qrcode-display">
+    <div class="qrcode-section">
+      <h2>Sample QR Code</h2>
+      <canvas #qrCanvasRef></canvas>
+      <div class="button-group">
+        <button class="download-btn" (click)="downloadQRCode()">
+          Download QR Code (PNG)
+        </button>
+        <button class="export-btn" (click)="exportToPDF()">
+          Export as PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="qrcode-info-section">
+    <div *ngFor="let info of qrCodeInfo" class="info-card">
+      <h3>{{ info.title }}</h3>
+      <p class="description">{{ info.description }}</p>
+      <ul class="details-list">
+        <li *ngFor="let detail of info.details">{{ detail }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qrcode-features">
+    <h2>Key Features of QR Codes</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>Fast Scanning</h4>
+        <p>Scanned quickly with smartphones and dedicated readers</p>
+      </div>
+      <div class="feature-card">
+        <h4>High Capacity</h4>
+        <p>Can store up to 4,296 characters of data</p>
+      </div>
+      <div class="feature-card">
+        <h4>Error Correction</h4>
+        <p>Can be decoded even if 30% of the code is damaged</p>
+      </div>
+      <div class="feature-card">
+        <h4>Multiple Orientations</h4>
+        <p>Works when rotated or viewed from any angle</p>
+      </div>
+    </div>
+  </div>
+</div>
