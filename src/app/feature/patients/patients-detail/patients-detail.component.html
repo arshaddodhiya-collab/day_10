@@ -1,1 +1,42 @@
-<p>patients-detail works!</p>
+<div class="p-4">
+  <p-card *ngIf="patient">
+    <div class="flex justify-content-between align-items-center mb-3">
+      <h2 class="m-0">Patient Details</h2>
+
+      <button
+        pButton
+        label="Edit"
+        icon="pi pi-pencil"
+        class="p-button-warning"
+        [routerLink]="['/patients', patient!.id, 'edit']"
+      ></button>
+    </div>
+
+    <div class="grid">
+      <div class="col-12 md:col-6">
+        <strong>Name:</strong>
+        <p>{{ patient!.name }}</p>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <strong>Age:</strong>
+        <p>{{ patient!.age }}</p>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <strong>Gender:</strong>
+        <p>{{ patient!.gender }}</p>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <strong>Phone:</strong>
+        <p>{{ patient!.phone }}</p>
+      </div>
+
+      <div class="col-12">
+        <strong>Email:</strong>
+        <p>{{ patient!.email }}</p>
+      </div>
+    </div>
+  </p-card>
+</div>

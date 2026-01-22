@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientsListComponent } from './patients-list/patients-list.component';
-import { PatientsFormComponent } from './patients-form/patients-form.component';
+import { PatientFormComponent } from './patients-form/patients-form.component';
 import { PatientsDetailComponent } from './patients-detail/patients-detail.component';
 
 
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    component: PatientsFormComponent,
+    component: PatientFormComponent,
   },
   {
     path: ':id',
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: ':id/edit',
-    component: PatientsFormComponent,
+    component: PatientFormComponent,
   },
 ];
 

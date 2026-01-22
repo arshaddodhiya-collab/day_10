@@ -1,1 +1,94 @@
-<p>patients-form works!</p>
+<div class="p-4">
+  <p-card>
+    <h2 class="mb-4">
+      {{ isEdit ? 'Edit Patient' : 'Add Patient' }}
+    </h2>
+
+    <form
+      [formGroup]="patientForm"
+      (ngSubmit)="submit()"
+      class="grid"
+    >
+      <!-- Name -->
+      <div class="col-12 md:col-6">
+        <label class="block mb-2">Name</label>
+        <input
+          pInputText
+          formControlName="name"
+          class="w-full"
+        />
+        <small
+          class="text-red-500"
+          *ngIf="patientForm.get('name')?.touched && patientForm.get('name')?.invalid"
+        >
+          Name is required
+        </small>
+      </div>
+
+      <!-- Age -->
+      <div class="col-12 md:col-6">
+        <label class="block mb-2">Age</label>
+        <input
+          type="number"
+          pInputText
+          formControlName="age"
+          class="w-full"
+        />
+      </div>
+
+      <!-- Gender -->
+      <div class="col-12 md:col-6">
+        <label class="block mb-2">Gender</label>
+        <p-dropdown
+          [options]="genderOptions"
+          optionLabel="label"
+          optionValue="value"
+          formControlName="gender"
+          placeholder="Select Gender"
+          class="w-full"
+        ></p-dropdown>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-12 md:col-6">
+        <label class="block mb-2">Phone</label>
+        <input
+          pInputText
+          formControlName="phone"
+          class="w-full"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="col-12 md:col-6">
+        <label class="block mb-2">Email</label>
+        <input
+          pInputText
+          formControlName="email"
+          class="w-full"
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div class="col-12 flex gap-3 mt-3">
+        <button
+          pButton
+          type="submit"
+          label="Save"
+          icon="pi pi-check"
+          class="p-button-success"
+          [disabled]="patientForm.invalid"
+        ></button>
+
+        <button
+          pButton
+          type="button"
+          label="Cancel"
+          icon="pi pi-times"
+          class="p-button-secondary"
+          routerLink="/patients"
+        ></button>
+      </div>
+    </form>
+  </p-card>
+</div>
