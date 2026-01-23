@@ -10,7 +10,14 @@ const routes: Routes = [
     path: 'patients',
     loadChildren: () =>
       import('./feature/patients/patients.module').then(
-        (m) => m.PatientsModule
+        (m) => m.PatientsModule,
+      ),
+  },
+  {
+    path: 'realtime',
+    loadChildren: () =>
+      import('./feature/realtime/realtime.module').then(
+        (m) => m.RealtimeModule,
       ),
   },
 ];
